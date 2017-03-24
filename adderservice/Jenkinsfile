@@ -9,6 +9,9 @@ pipeline {
     }
     stage('Build') { 
       steps { 
+        sh 'whoami'
+        sh 'set'
+        sh 'source ~/.bashrc && set'
         sh 'set'
         sh 'npm install'
       }
