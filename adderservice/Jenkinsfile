@@ -19,7 +19,9 @@ pipeline {
     }
     stage('Container'){
       steps {
-        sh 'source ~/.bashrc && cd adderservice && sh build.sh container'
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DOCKERHUB', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]) {
+          sh 'source ~/.bashrc && cd adderservice && sh build.sh container'
+        }
       }
     }
   }
