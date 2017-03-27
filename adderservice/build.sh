@@ -16,10 +16,7 @@ case "$1" in
     echo _________________________________________________________
     whoami
     sudo whoami
-    echo $DOCKER_USERNAME
-    echo $DOCKER_PASSWORD
-    sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    #sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push pelger/adderservice:$GITSHA 
+    sudo docker push pelger/adderservice:$GITSHA 
     #sadfsdf sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push pelger/adderservice:$GITSHA 
   ;;
   deploy)
