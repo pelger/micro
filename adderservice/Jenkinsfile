@@ -17,6 +17,11 @@ pipeline {
         sh 'source ~/.bashrc && cd adderservice && npm test'
       }
     }
+    stage('Container'){
+      steps {
+        sh 'source ~/.bashrc && cd adderservice && sh build.sh container'
+      }
+    }
   }
 }
 
