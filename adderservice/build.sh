@@ -16,11 +16,7 @@ case "$1" in
     echo _________________________________________________________
     whoami
     sudo whoami
-
-    test docker login -> ger rid of the push here and just login with echo and close
-
-    sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push pelger/adderservice:$GITSHA 
-
+    #sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push pelger/adderservice:$GITSHA 
     #sadfsdf sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push pelger/adderservice:$GITSHA 
   ;;
   deploy)
