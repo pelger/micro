@@ -16,7 +16,12 @@ case "$1" in
     echo _________________________________________________________
     whoami
     sudo whoami
+
+    test docker login -> ger rid of the push here and just login with echo and close
+
     sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push pelger/adderservice:$GITSHA 
+
+    #sadfsdf sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push pelger/adderservice:$GITSHA 
   ;;
   deploy)
     sed -e s/_NAME_/adderservice/ -e s/_PORT_/8080/  < ../deployment/service-template.yml > svc.yml
