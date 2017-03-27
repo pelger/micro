@@ -9,12 +9,12 @@ pipeline {
     }
     stage('Build') { 
       steps { 
-        sh 'source ~/.bashrc && npm install'
+        sh 'source ~/.bashrc && cd adderservice && npm install'
       }
     }
     stage('Test'){
       steps {
-        sh 'source ~/.bashrc && npm test'
+        sh 'source ~/.bashrc && cd adderservice && npm test'
       }
     }
   }
