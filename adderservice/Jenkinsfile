@@ -9,16 +9,12 @@ pipeline {
     }
     stage('Build') { 
       steps { 
-        sh 'whoami'
-        sh 'set'
-        sh 'source ~/.bashrc && set'
-        sh 'set'
-        sh 'npm install'
+        sh 'source ~/.bashrc && npm install'
       }
     }
     stage('Test'){
       steps {
-        sh 'npm test'
+        sh 'source ~/.bashrc && npm test'
       }
     }
   }
