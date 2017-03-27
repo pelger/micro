@@ -13,6 +13,9 @@ case "$1" in
   container)
     sudo docker build -t adderservice:$GITSHA .
     sudo docker tag adderservice:$GITSHA pelger/adderservice:$GITSHA 
+    echo _________________________________________________________
+    whoami
+    sudo whoami
     sudo docker push pelger/adderservice:$GITSHA 
   ;;
   deploy)
