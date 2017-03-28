@@ -4,12 +4,6 @@ sh source ~/.bashrc
 GITSHA=$(git rev-parse --short HEAD)
 
 case "$1" in
-  build)
-    npm install
-  ;;
-  test)
-    npm test
-  ;;
   container)
     sudo -u pelger docker build -t adderservice:$GITSHA .
     sudo -u pelger docker tag adderservice:$GITSHA pelger/adderservice:$GITSHA 
@@ -22,7 +16,7 @@ case "$1" in
     sudo -i -u pelger kubectl apply -f $(pwd)/dep.yml
   ;;
   *)
-    echo 
+    echo 'invalid build command'
     exit 1
   ;;
 esac
