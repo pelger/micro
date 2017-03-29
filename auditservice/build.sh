@@ -1,5 +1,5 @@
 #!/bin/bash
-sh source ~/.bashrc
+source ~/.bashrc
 
 GITSHA=$(git rev-parse --short HEAD)
 
