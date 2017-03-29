@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
 
 
 router.post('/calculate', function (req, res, next) {
-  helper.createClient('adder_service', function (err, addClient) {
+  helper.createClient('adderservice', function (err, addClient) {
     if (err) { console.log(err) }
 
     addClient.get('/add/' + req.body.first + '/' + req.body.second, function (err, serviceReq, serviceRes, resultObj) {
@@ -17,7 +17,7 @@ router.post('/calculate', function (req, res, next) {
 
       res.render('add', {first: req.body.first, second: req.body.second, result: resultObj.result})
       var calcString = '' + req.body.first + ' + ' + req.body.second
-      helper.createClient('audit_service', function (err, auditClient) {
+      helper.createClient('auditservice', function (err, auditClient) {
         if (err) { console.log(err) }
         auditClient.post('/append', {calc: calcString, calcResult: resultObj.result}, function (err, req, res, obj) {
           if (err) { console.log(err) }

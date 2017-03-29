@@ -10,7 +10,8 @@
   "author": "Peter Elger <peter.elger@nearform.com>",
   "license": "ISC",
   "dependencies": {
-    "mongo": "^0.1.0",
+    "concordant": "^0.2.1",
+    "mongodb": "^2.2.25",
     "restify": "^4.3.0"
   }
 }

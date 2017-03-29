@@ -1,7 +1,7 @@
 var conc = require('concordant')()
 var Redis = require('redis')
 var CliTable = require('cli-table')
-var QNAME = 'event_service'
+var QNAME = 'eventservice'
 var RESPONSE_QUEUE = 'sumary'
 
 

@@ -1,6 +1,6 @@
 var conc = require('concordant')()
 var Redis = require('redis')
-var QNAME = 'event_service'
+var QNAME = 'eventservice'
 
 
 module.exports = function () {
